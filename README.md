@@ -1,13 +1,20 @@
 # mod-gnomish-army-knife
 
+<img src="icon.png" alt="" width="64" align="right">
+
 An [AzerothCore](https://www.azerothcore.org/) (WotLK 3.3.5a) module that gives every
 character a Gnomish Army Knife (item 40772), the engineering tool that also works as a
 skinning knife, mining pick and blacksmith hammer.
 
+- **Author:** [dudemcbro](https://github.com/dudemcbro)
+- **License:** [GNU AGPL v3.0](LICENSE)
+- **Works with:** AzerothCore WotLK (3.3.5a) with the `mail_server_template` tables of
+  the core's server mail system. No configuration file and no core patches.
+
 The module is data only. Its `src/` folder holds an empty script loader, which is what
 puts the module on the core's module list so the worldserver imports its SQL.
 
-## What it does
+## Features
 
 - **New characters** get the knife at creation, for every race and class
   (`playercreateinfo_item`).
@@ -16,28 +23,19 @@ puts the module on the core's module list so the worldserver imports its SQL.
   of played time.
 - **Every innkeeper** sells the knife for 1 copper, so a character that loses it can buy
   another.
-- The knife becomes Bind on Pickup.
+- **Bind on Pickup.** The knife becomes Bind on Pickup.
 
 A new character's first login has no played time yet, so it gets the mail on its second
 login, and ends up with a second knife.
 
-## Requirements
-
-- AzerothCore WotLK (3.3.5a) with the `mail_server_template` tables of the core's
-  server mail system.
-- No configuration file and no core patches.
-
-## Installation
+## Quick start
 
 1. Clone the module into the core's `modules` folder:
-
    ```sh
    cd <azerothcore>/modules
    git clone https://github.com/dudemcbro/mod-gnomish-army-knife.git
    ```
-
 2. Re-run CMake and rebuild the core, for example with `./acore.sh compiler build`.
-
 3. Restart `worldserver`. It imports `data/sql/world` and `data/sql/characters` on
    startup (with the updater enabled, the default). Each file can run again safely.
 
@@ -65,4 +63,4 @@ please open an issue first, and describe how you tested your change.
 
 ## License
 
-GNU Affero General Public License v3.0, see [LICENSE](LICENSE).
+Licensed under the GNU Affero General Public License v3.0. See [LICENSE](LICENSE).
